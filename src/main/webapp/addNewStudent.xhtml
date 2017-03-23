@@ -17,7 +17,19 @@
                 <h:outputText value="Surname:"/>
                 <h:inputText id="clientSurname" value="#{newStudentBean.studentLastName}" required="true"/>
                 <h:message for="clientSurname"/>
+                
+         <!-- Insert only new value -->
+         
+                <h:outputText value="Date of birth:"/>
+                
+         <!--    Here there is still adjusting
+         
+ 
+                
+             -->
 
+                
+	   
             </h:panelGrid>
             <h:commandButton action="#{newStudentBean.save()}" value="Add"/>
         </h:form>
