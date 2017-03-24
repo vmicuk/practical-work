@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>EMPRIS Welcome page</title>
+    <h:outputStylesheet name="styles.css"/>
+</h:head>
+
+    <h:body class="body">
+        <div class="container">
+
+            <div class="header"><img class="logo" src="images/id-card.svg" width="55" alt="" />
+
+                <div class="text-block">EMPRIS</div>
+            </div>
+
+            <h:form class="content">
+                <h3 class="text-block-3">Elektroninė <span class="marked">moksleivių</span> priėmimo
+                <br />registracijos informacinė sistema</h3>
+                    <h:commandButton class="btn intro next w-inline-block" action="#{newStudentBean.save()}" value="Naujo moksleivio registracija"/>
+                    <h:commandButton class="btn intro next w-inline-block" action="#{newStudentBean.save()}" value="Mokymo plano pasirinkimas"/>
+                    <h:commandButton class="btn intro next w-inline-block" action="#{newStudentBean.save()}" value="Informacija apie moksleivį"/>
+                    <h:commandButton class="btn intro next w-inline-block" action="#{newStudentBean.save()}" value="Peržiūrėti mokymo planą"/>
+            </h:form>
+
+            <div class="footer">
+                <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
+            </div>
+        </div>
+    </h:body>
+
+</html>
