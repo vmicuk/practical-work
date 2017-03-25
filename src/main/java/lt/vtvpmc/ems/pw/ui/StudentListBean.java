@@ -1,27 +1,28 @@
 
 package lt.vtvpmc.ems.pw.ui;
 
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import lt.vtvpmc.ems.pw.entities.Student;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
+
 public class StudentListBean {
-    
+
     @PersistenceContext
     private EntityManager entityManager;
-    
+
     @Transactional(readOnly = true)
-    public List<Student> getStudentList() {
+    public List<?> getStudentList() {
         Query q = entityManager.createQuery("select c from Student c");
         return q.getResultList();
     }
-    
+
     @Transactional
     public void removeStudent(Student student) {
         entityManager.remove(entityManager.merge(student));
     }
-    
+
 }
