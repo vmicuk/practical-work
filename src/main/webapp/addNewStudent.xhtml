@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
 <h:head>
-    <title>dd New Student</title>
+    <meta charset="utf-8"/>
+    <title>Add New Student</title>
     <h:outputStylesheet name="styles.css"/>
 </h:head>
-
 
 <h:body class="body">
     <div class="container">
 
-        <div class="header"><a href="#"><img class="logo" src="images/id-card.svg" width="55"/></a>
-
-            <a href="firstMain.xhtml">
-                <div class="text-block">EMPRIS</div>
-            </a>
+        <div class="header">
+            <img class="logo" src="images/id-card.svg" width="55" alt=""/>
+            <div class="text-block"><a href="firstMain.xhtml">EMPRIS</a></div>
         </div>
 
 
+        <h:form class="content">
 
+            <h3 class="text-block-3">Pridėti naują mokinį</h3>
+            <h:panelGrid columns="3" class="w-form">
+                <h:outputText value="Vardas:"/>
+                <h:inputText class="w-input" data-name="Name" id="name" maxlength="256"
+                             type="text" value="#{newStudentBean.studentFirstName}" pt:placeholder="Įveskite vardą."
+                             required="true"/>
+                <h:message for="name"/>
 
-            <h:form class="content">
+                <h:outputText value="Pavardė:"/>
+                <h:inputText class="w-input" data-name="LastName" id="lastName" maxlength="256"
+                             placeholder="Įveskite pavardę." type="text" value="#{newStudentBean.studentLastName}"
+                             required="true"/>
+                <h:message for="lastName"/>
 
-                <h3 class="text-block-3">Pridėti naują mokinį</h3>
-                <h:panelGrid columns="3">
-                    <h:outputText value="Vardas:"/>
-                    <h:inputText class="w-input" data-name="Name" id="name" maxlength="256"
-                                 placeholder="Įveskite vardą." type="text" value="#{newStudentBean.studentFirstName}"
-                                 required="true"/>
-                    <h:message for="name"/>
+                <h:outputText value="Gimimo data:"/>
+                <h:inputText class="w-input" data-name="DateOfBirth" id="dateOfBirth" maxlength="256"
+                             placeholder="Įveskite vardą." type="date"
+                             required="true"/> <!-- reikes prideti: value="#{newStudentBean.studentDateOfBirth}"-->
+                <h:message for="dateOfBirth"/>
 
-                    <h:outputText value="Pavardė:"/>
-                    <h:inputText class="w-input" data-name="LastName" id="lastName" maxlength="256"
-                                 placeholder="Įveskite pavardę." type="text" value="#{newStudentBean.studentLastName}"
-                                 required="true"/>
-                    <h:message for="lastName"/>
+                <h:outputText value="El.paštas:"/>
+                <h:inputText class="w-input" data-name="Email" id="email" maxlength="256" name="email"
+                             placeholder="Enter your email address" type="email"
+                             required="true"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.studentEmail}" -->
+                <h:message for="email"/>
 
-                    <h:outputText value="Gimimo data:"/>
-                    <h:inputText class="w-input" data-name="DateOfBirth" id="dateOfBirth" maxlength="256"
-                                 placeholder="Įveskite vardą." type="date"
-                                 required="true"/> <!-- reikes prideti: value="#{newStudentBean.studentDateOfBirth}"-->
-                    <h:message for="dateOfBirth"/>
+                <!--<div class="w-form-done">-->
+                <!--<div>Ačiū! Forma užpildyta!</div>-->
+                <!--</div>-->
 
-                    <h:outputText value="El.paštas:"/>
-                    <h:inputText class="w-input" data-name="Email" id="email" maxlength="256" name="email"
-                                 placeholder="Enter your email address" type="email"
-                                  required="true"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.studentEmail}" -->
-                    <h:message for="email"/>
+                <!--<div class="w-form-fail">-->
+                <!--<div>Oops! Kažkas nutiko pildant formą!</div>-->
+                <!--</div>-->
+            </h:panelGrid>
 
-                    <!--<div class="w-form-done">-->
-                        <!--<div>Ačiū! Forma užpildyta!</div>-->
-                    <!--</div>-->
-
-                    <!--<div class="w-form-fail">-->
-                        <!--<div>Oops! Kažkas nutiko pildant formą!</div>-->
-                    <!--</div>-->
-
-                </h:panelGrid>
-                <h:commandButton class="btn grizti w-inline-block" action="firstMain" value="Grįžti"/>
-                <h:commandButton class="btn next w-inline-block" value="Patvirtinti"/> <!-- mygtukas turi tureti: action="#{newStudentBean.save()}" -->
-            </h:form>
+            <div class="div-block w-clearfix">
+            <h:commandButton class="btn grizti w-inline-block" action="firstMain.xhtml" value="Grįžti" required="false"/>
+            <h:commandButton class="btn next w-inline-block" action="#{newStudentBean.save()}"
+                             value="Patvirtinti"/>
+            </div>
+        </h:form>
 
 
 
     <div class="footer">
         <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
     </div>
-    </div>
+</div>
 </h:body>
-</html>
+        </html>
