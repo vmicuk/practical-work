@@ -2,36 +2,72 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-    <h:head>
-        <title>Add New Student</title>
-    </h:head>
-    
-    <h:body>
-        <h:form id="newCustomerForm">
-            <h3>Add New Student</h3>
-            <h:panelGrid columns="3">
-                <h:outputText value="Name:"/>
-                <h:inputText id="clientName" value="#{newStudentBean.studentFirstName}" required="true"/>
-                <h:message for="clientName"/>
-                
-                <h:outputText value="Surname:"/>
-                <h:inputText id="clientSurname" value="#{newStudentBean.studentLastName}" required="true"/>
-                <h:message for="clientSurname"/>
-                
-         <!-- Insert only new value -->
-         
-                <h:outputText value="Date of birth:"/>
-                
-         <!--    Here there is still adjusting
-         
- 
-                
-             -->
 
-                
-	   
-            </h:panelGrid>
-            <h:commandButton action="#{newStudentBean.save()}" value="Add"/>
-        </h:form>
-    </h:body>
+<h:head>
+    <title>dd New Student</title>
+    <h:outputStylesheet name="styles.css"/>
+</h:head>
+
+
+<h:body class="body">
+    <div class="container">
+
+        <div class="header"><a href="#"><img class="logo" src="images/id-card.svg" width="55"/></a>
+
+            <a href="firstMain.xhtml">
+                <div class="text-block">EMPRIS</div>
+            </a>
+        </div>
+
+
+
+
+            <h:form class="content">
+
+                <h3 class="text-block-3">Pridėti naują mokinį</h3>
+                <h:panelGrid columns="3">
+                    <h:outputText value="Vardas:"/>
+                    <h:inputText class="w-input" data-name="Name" id="name" maxlength="256"
+                                 placeholder="Įveskite vardą." type="text" value="#{newStudentBean.studentFirstName}"
+                                 required="true"/>
+                    <h:message for="name"/>
+
+                    <h:outputText value="Pavardė:"/>
+                    <h:inputText class="w-input" data-name="LastName" id="lastName" maxlength="256"
+                                 placeholder="Įveskite pavardę." type="text" value="#{newStudentBean.studentLastName}"
+                                 required="true"/>
+                    <h:message for="lastName"/>
+
+                    <h:outputText value="Gimimo data:"/>
+                    <h:inputText class="w-input" data-name="DateOfBirth" id="dateOfBirth" maxlength="256"
+                                 placeholder="Įveskite vardą." type="date"
+                                 required="true"/> <!-- reikes prideti: value="#{newStudentBean.studentDateOfBirth}"-->
+                    <h:message for="dateOfBirth"/>
+
+                    <h:outputText value="El.paštas:"/>
+                    <h:inputText class="w-input" data-name="Email" id="email" maxlength="256" name="email"
+                                 placeholder="Enter your email address" type="email"
+                                  required="true"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.studentEmail}" -->
+                    <h:message for="email"/>
+
+                    <!--<div class="w-form-done">-->
+                        <!--<div>Ačiū! Forma užpildyta!</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="w-form-fail">-->
+                        <!--<div>Oops! Kažkas nutiko pildant formą!</div>-->
+                    <!--</div>-->
+
+                </h:panelGrid>
+                <h:commandButton class="btn grizti w-inline-block" action="firstMain" value="Grįžti"/>
+                <h:commandButton class="btn next w-inline-block" value="Patvirtinti"/> <!-- mygtukas turi tureti: action="#{newStudentBean.save()}" -->
+            </h:form>
+
+
+
+    <div class="footer">
+        <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
+    </div>
+    </div>
+</h:body>
 </html>
