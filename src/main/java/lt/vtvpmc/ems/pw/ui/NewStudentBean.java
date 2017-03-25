@@ -2,8 +2,12 @@ package lt.vtvpmc.ems.pw.ui;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import lt.vtvpmc.ems.pw.entities.Student;
+import org.hibernate.validator.constraints.Email;
 import org.springframework.transaction.annotation.Transactional;
 
 public class NewStudentBean {
@@ -11,12 +15,23 @@ public class NewStudentBean {
     @PersistenceContext
     private EntityManager entityManager;
 
+    @NotNull
+    @Size(min = 3, max = 20, message = "Vardas turi būti 3 - 20 simbolių ilgio!")
     private String studentFirstName;
+
+    @NotNull
+    @Size(min = 3, max = 20, message = "Pavardė turi būti 3 - 20 simbolių ilgio!")
     private String studentLastName;
+
+    @NotNull
+    @Email(message = "El. pašto adresas tu būti veikiantis!")
+    @Pattern(regexp=".+@.+\\..+", message = "El. pašto adresas turi būti veikiantis!")
+    @Size(min = 10, max = 30, message = "El. pašto adresas turi būti 10 - 30 simbolių ilgio!")
+    private String studentEmail;
 
     @Transactional
     public String save() {
-        Student student = new Student(studentFirstName, studentLastName);
+        Student student = new Student(studentFirstName, studentLastName, studentEmail);
         entityManager.persist(student);
         return "main";
     }
@@ -37,5 +52,11 @@ public class NewStudentBean {
         this.studentLastName = studentLastName;
     }
 
+    public String getStudentEmail() {
+        return studentEmail;
+    }
 
+    public void setStudentEmail(String studentEmail) {
+        this.studentEmail = studentEmail;
+    }
 }
