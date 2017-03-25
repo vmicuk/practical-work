@@ -2,14 +2,15 @@ package lt.vtvpmc.ems.pw.ui;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import lt.vtvpmc.ems.pw.entities.Student;
 import org.springframework.transaction.annotation.Transactional;
 
 public class NewStudentBean {
-    
+
     @PersistenceContext
     private EntityManager entityManager;
-    
+
     private String studentFirstName;
     private String studentLastName;
 
@@ -19,7 +20,7 @@ public class NewStudentBean {
         entityManager.persist(student);
         return "main";
     }
-    
+
     public String getStudentFirstName() {
         return studentFirstName;
     }
