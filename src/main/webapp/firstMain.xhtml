@@ -8,27 +8,33 @@
     <h:outputStylesheet name="styles.css"/>
 </h:head>
 
-    <h:body class="body">
-        <div class="container">
+<h:body class="body">
+    <div class="container">
 
-            <div class="header"><img class="logo" src="images/id-card.svg" width="55" alt="" />
+        <div class="header"><a href="#"><img class="logo" src="images/id-card.svg" width="55" alt=""/></a>
 
+            <a href="#">
                 <div class="text-block">EMPRIS</div>
-            </div>
-
-            <h:form class="content">
-                <h3 class="text-block-3">Elektroninė <span class="marked">moksleivių</span> priėmimo
-                <br />registracijos informacinė sistema</h3>
-                    <h:commandButton class="btn intro next w-inline-block" value="Naujo moksleivio registracija"/> <!-- mygtukas tyru tureti: action="#{newStudentBean.save()}" -->
-                    <h:commandButton class="btn intro next w-inline-block" value="Mokymo plano pasirinkimas"/> <!-- mygtukas tyru tureti: action="#{newStudentBean.save()}" -->
-                    <h:commandButton class="btn intro next w-inline-block"  value="Informacija apie moksleivį"/> <!-- mygtukas tyru tureti: action="#{newStudentBean.save()}" -->
-                    <h:commandButton class="btn intro next w-inline-block"  value="Peržiūrėti mokymo planą"/> <!-- mygtukas tyru tureti: action="#{newStudentBean.save()}" -->
-            </h:form>
-
-            <div class="footer">
-                <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
-            </div>
+            </a>
         </div>
-    </h:body>
+
+        <h:form class="content">
+            <h3 class="text-block-3">Elektroninė <span class="marked">moksleivių</span> priėmimo
+                <br/>registracijos informacinė sistema</h3>
+            <h:commandButton class="btn intro next w-inline-block" action="addNewStudent"
+                             value="Naujo moksleivio registracija"/>
+            <h:commandButton class="btn intro next w-inline-block"
+                             value="Mokymo plano pasirinkimas"/> <!-- mygtukas turi tureti: action="#{newStudentBean.save()}" -->
+            <h:commandButton class="btn intro next w-inline-block"
+                             value="Informacija apie moksleivį"/> <!-- mygtukas turi tureti: action="#{newStudentBean.save()}" -->
+            <h:commandButton class="btn intro next w-inline-block"
+                             value="Peržiūrėti mokymo planą"/> <!-- mygtukas turi tureti: action="#{newStudentBean.save()}" -->
+        </h:form>
+
+        <div class="footer">
+            <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
+        </div>
+    </div>
+</h:body>
 
 </html>
