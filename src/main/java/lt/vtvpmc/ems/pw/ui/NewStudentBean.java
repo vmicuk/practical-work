@@ -24,7 +24,7 @@ public class NewStudentBean {
     private String studentLastName;
 
     @NotNull
-    @Email(message = "El. pašto adresas tu būti veikiantis!")
+    @Email(message = "El. pašto adresas turi būti veikiantis!")
     @Pattern(regexp=".+@.+\\..+", message = "El. pašto adresas turi būti veikiantis!")
     @Size(min = 10, max = 30, message = "El. pašto adresas turi būti 10 - 30 simbolių ilgio!")
     private String studentEmail;
