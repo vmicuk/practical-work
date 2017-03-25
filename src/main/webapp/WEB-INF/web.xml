@@ -27,10 +27,10 @@
 		<param-name>com.sun.faces.enableViewStateIdRendering</param-name>
 		<param-value>false</param-value>
 	</context-param>
-	<context-param>
-		<param-name>javax.faces.CONFIG_FILES</param-name>
-		<param-value>/WEB-INF/faces-config.xml</param-value>
-	</context-param>
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/WEB-INF/faces-config.xml</param-value>
+    </context-param>
 
     <!-- Faces Servlet -->
     <!-- Insert context-param facelets_skip_comments
@@ -53,7 +53,7 @@
    </servlet-mapping>
 
    <welcome-file-list>
-     <welcome-file>faces/main.xhtml</welcome-file>
+     <welcome-file>faces/firstMain.xhtml</welcome-file>
    </welcome-file-list>
 	
 	<context-param>
