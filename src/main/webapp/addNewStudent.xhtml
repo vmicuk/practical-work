@@ -43,7 +43,7 @@
 
                 <h:outputText value="El.paštas:"/>
                 <h:inputText class="w-input" data-name="Email" id="email" maxlength="256" name="email"
-                             placeholder="Enter your email address" type="email"
+                             placeholder="Enter your email address" type="email" value="#{newStudentBean.studentEmail}"
                              required="true"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.studentEmail}" -->
                 <h:message for="email"/>
 
