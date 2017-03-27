@@ -22,6 +22,7 @@
         <h:form class="content">
 
             <h3 class="text-block-3">Pridėti naują mokinį</h3>
+
             <h:panelGrid columns="3" class="w-form">
                 <h:outputText value="Vardas:"/>
                 <h:inputText class="w-input" data-name="Name" id="name" maxlength="256"
@@ -31,21 +32,143 @@
 
                 <h:outputText value="Pavardė:"/>
                 <h:inputText class="w-input" data-name="LastName" id="lastName" maxlength="256"
-                             placeholder="Įveskite pavardę." type="text" value="#{newStudentBean.studentLastName}"
+                             pt:placeholder="Įveskite pavardę." type="text" value="#{newStudentBean.studentLastName}"
                              required="true"/>
                 <h:message for="lastName"/>
 
                 <h:outputText value="Gimimo data:"/>
                 <h:inputText class="w-input" data-name="DateOfBirth" id="dateOfBirth" maxlength="256"
-                             placeholder="Įveskite vardą." type="date"
+                             pt:placeholder="Įveskite vardą." type="date"
                              required="true"/> <!-- reikes prideti: value="#{newStudentBean.studentDateOfBirth}"-->
                 <h:message for="dateOfBirth"/>
 
+                <h:outputText value="Adresas:"/>
+                <h:inputText class="w-input" data-name="StudentAdress" id="adress" maxlength="256"
+                             pt:placeholder="Įveskite adresą." type="adress"
+                             required="false"/> <!-- reikes prideti: value="#{newStudentBean.studentsAdress}"-->
+                <h:message for="adress"/>
+
+                <h:outputText value="Savivaldybė:"/>
+                <h:selectOneMenu class="w-input" data-name="Municipaity" id="municipality" maxlength="256"
+                                 required="false"> <!-- reikes prideti: value="#{newStudentBean.municipality}"-->
+                    <f:selectItem itemValue="Nepasirikta" itemLabel="-Pasirinkite savivaldybę-" />
+                    <f:selectItem itemValue="Akmenės rajono savivaldybė" itemLabel="Akmenės rajono savivaldybė" />
+                    <f:selectItem itemValue="Alytaus miesto savivaldybė" itemLabel="Alytaus miesto savivaldybė" />
+                    <f:selectItem itemValue="Alytaus rajono savivaldybė" itemLabel="Alytaus rajono savivaldybė" />
+                    <f:selectItem itemValue="Anykščių rajono savivaldybė" itemLabel="Anykščių rajono savivaldybė" />
+                    <f:selectItem itemValue="Birštono savivaldybė" itemLabel="Birštono savivaldybė" />
+                    <f:selectItem itemValue="Biržų rajono savivaldybė" itemLabel="Biržų rajono savivaldybė" />
+                    <f:selectItem itemValue="Druskininkų savivaldybė" itemLabel="Druskininkų savivaldybė" />
+                    <f:selectItem itemValue="Elektrėnų savivaldybė" itemLabel="Elektrėnų savivaldybė" />
+                    <f:selectItem itemValue="Ignalinos rajono savivaldybė" itemLabel="Ignalinos rajono savivaldybė" />
+                    <f:selectItem itemValue="Jonavos rajono savivaldybė" itemLabel="Jonavos rajono savivaldybė" />
+                    <f:selectItem itemValue="Joniškio rajono savivaldybė" itemLabel="Joniškio rajono savivaldybė" />
+                    <f:selectItem itemValue="Jurbarko rajono savivaldybė" itemLabel="Jurbarko rajono savivaldybė" />
+                    <f:selectItem itemValue="Kaišiadorių rajono savivaldybė" itemLabel="Kaišiadorių rajono savivaldybė" />
+                    <f:selectItem itemValue="Kalvarijos savivaldybė" itemLabel="Kalvarijos savivaldybė" />
+                    <f:selectItem itemValue="Kauno miesto savivaldybė" itemLabel="Kauno miesto savivaldybė" />
+                    <f:selectItem itemValue="Kauno rajono savivaldybė" itemLabel="Kauno rajono savivaldybė" />
+                    <f:selectItem itemValue="Kazlų Rūdos savivaldybė" itemLabel="Kazlų Rūdos savivaldybė" />
+                    <f:selectItem itemValue="Kėdainių rajono savivaldybė" itemLabel="Kėdainių rajono savivaldybė" />
+                    <f:selectItem itemValue="Kelmės rajono savivaldybė" itemLabel="Kelmės rajono savivaldybė" />
+                    <f:selectItem itemValue="Klaipėdos miesto savivaldybė" itemLabel="Klaipėdos miesto savivaldybė" />
+                    <f:selectItem itemValue="Klaipėdos rajono savivaldybė" itemLabel="Klaipėdos rajono savivaldybė" />
+                    <f:selectItem itemValue="Kretingos rajono savivaldybė" itemLabel="Kretingos rajono savivaldybė" />
+                    <f:selectItem itemValue="Kupiškio rajono savivaldybė" itemLabel="Kupiškio rajono savivaldybė" />
+                    <f:selectItem itemValue="Lazdijų rajono savivaldybė" itemLabel="Lazdijų rajono savivaldybė" />
+                    <f:selectItem itemValue="Marijampolės savivaldybė" itemLabel="Marijampolės savivaldybė" />
+                    <f:selectItem itemValue="Mažeikių rajono savivaldybė" itemLabel="Mažeikių rajono savivaldybė" />
+                    <f:selectItem itemValue="Molėtų rajono savivaldybė" itemLabel="Molėtų rajono savivaldybė" />
+                    <f:selectItem itemValue="Neringos savivaldybė" itemLabel="Neringos savivaldybė" />
+                    <f:selectItem itemValue="Pagėgių savivaldybė" itemLabel="Pagėgių savivaldybė" />
+                    <f:selectItem itemValue="Pakruojo rajono savivaldybė" itemLabel="Pakruojo rajono savivaldybė" />
+                    <f:selectItem itemValue="Palangos miesto savivaldybė" itemLabel="Palangos miesto savivaldybė" />
+                    <f:selectItem itemValue="Panevėžio miesto savivaldybė" itemLabel="Panevėžio miesto savivaldybė" />
+                    <f:selectItem itemValue="Panevėžio rajono savivaldybė" itemLabel="Panevėžio rajono savivaldybė" />
+                    <f:selectItem itemValue="Pasvalio rajono savivaldybė" itemLabel="Pasvalio rajono savivaldybė" />
+                    <f:selectItem itemValue="Plungės rajono savivaldybė" itemLabel="Plungės rajono savivaldybė" />
+                    <f:selectItem itemValue="Prienų rajono savivaldybė" itemLabel="Prienų rajono savivaldybė" />
+                    <f:selectItem itemValue="Radviliškio rajono savivaldybė	" itemLabel="Radviliškio rajono savivaldybė	" />
+                    <f:selectItem itemValue="Raseinių rajono savivaldybė" itemLabel="Raseinių rajono savivaldybė" />
+                    <f:selectItem itemValue="Rietavo savivaldybė" itemLabel="Rietavo savivaldybė" />
+                    <f:selectItem itemValue="Rokiškio rajono savivaldybė" itemLabel="Rokiškio rajono savivaldybė" />
+                    <f:selectItem itemValue="Skuodo rajono savivaldybė" itemLabel="Skuodo rajono savivaldybė" />
+                    <f:selectItem itemValue="Šakių rajono savivaldybė" itemLabel="Šakių rajono savivaldybė" />
+                    <f:selectItem itemValue="Šalčininkų rajono savivaldybė" itemLabel="Šalčininkų rajono savivaldybė" />
+                    <f:selectItem itemValue="Šiaulių miesto savivaldybė" itemLabel="Šiaulių miesto savivaldybė" />
+                    <f:selectItem itemValue="Šiaulių rajono savivaldybė" itemLabel="Šiaulių rajono savivaldybė" />
+                    <f:selectItem itemValue="Šilalės rajono savivaldybė" itemLabel="Šilalės rajono savivaldybė" />
+                    <f:selectItem itemValue="Šilutės rajono savivaldybė" itemLabel="Šilutės rajono savivaldybė" />
+                    <f:selectItem itemValue="Širvintų rajono savivaldybė" itemLabel="Širvintų rajono savivaldybė" />
+                    <f:selectItem itemValue="Švenčionių rajono savivaldybė" itemLabel="Švenčionių rajono savivaldybė" />
+                    <f:selectItem itemValue="Tauragės rajono savivaldybė" itemLabel="Tauragės rajono savivaldybė" />
+                    <f:selectItem itemValue="Telšių rajono savivaldybė" itemLabel="Telšių rajono savivaldybė" />
+                    <f:selectItem itemValue="Trakų rajono savivaldybė" itemLabel="Trakų rajono savivaldybė" />
+                    <f:selectItem itemValue="Ukmergės rajono savivaldybė" itemLabel="Ukmergės rajono savivaldybė" />
+                    <f:selectItem itemValue="Utenos rajono savivaldybė" itemLabel="Utenos rajono savivaldybė" />
+                    <f:selectItem itemValue="Varėnos rajono savivaldybė" itemLabel="Varėnos rajono savivaldybė" />
+                    <f:selectItem itemValue="Vilkaviškio rajono savivaldybė" itemLabel="Vilkaviškio rajono savivaldybė" />
+                    <f:selectItem itemValue="Vilniaus miesto savivaldybė" itemLabel="Vilniaus miesto savivaldybė" />
+                    <f:selectItem itemValue="Vilniaus rajono savivaldybė" itemLabel="Vilniaus rajono savivaldybė" />
+                    <f:selectItem itemValue="Visagino savivaldybė" itemLabel="Visagino savivaldybė" />
+                    <f:selectItem itemValue="Zarasų rajono savivaldybė" itemLabel="Zarasų rajono savivaldybė" />
+                </h:selectOneMenu>
+                <h:message for="municipality"/>
+
+                <h:outputText value="Telefono nr.:"/>
+                <h:inputText class="w-input" data-name="TelNr" id="telephoneNumber" maxlength="256" name="telephoneNumber"
+                             pt:placeholder="+37061231231" type="telephoneNumber"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.telephoneNumber}"-->
+                <h:message for="telephoneNumber"/>
+
                 <h:outputText value="El.paštas:"/>
                 <h:inputText class="w-input" data-name="Email" id="email" maxlength="256" name="email"
-                             placeholder="Enter your email address" type="email"
-                             required="true"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.studentEmail}" -->
+                             pt:placeholder="pavyzdys@pavyzdys.lt" type="email" value="#{newStudentBean.studentEmail}"
+                             required="false"></h:inputText>
                 <h:message for="email"/>
+
+                <h:outputText value="Išsilavinimas:"/>
+                <h:selectOneMenu class="w-input" data-name="Education" id="education" maxlength="256"
+                                 required="false"> <!-- reikes prideti: value="#{newStudentBean.education}"-->
+                    <f:selectItem itemValue="Nepasirikta" itemLabel="-Pasirinkite-" />
+                    <f:selectItem itemValue="Baigęs 10 klasių" itemLabel="Baigęs 10 klasių" />
+                    <f:selectItem itemValue="Pirminis (pagrindinis) išsilavinimas" itemLabel="Pirminis (pagrindinis) išsilavinimas" />
+                    <f:selectItem itemValue="Vidurinis išsilavinimas" itemLabel="Vidurinis išsilavinimas" />
+                    <f:selectItem itemValue="Aukštasis išsilavinimas" itemLabel="Aukštasis išsilavinimas" />
+                </h:selectOneMenu>
+                <h:message for="education"/>
+
+                <h:outputText value="Mokykla:"/>
+                <h:inputText class="w-input" data-name="School" id="school" maxlength="256" name="school"
+                             pt:placeholder="Įveskite mokyklos pavadinimą" type="school"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.school}"-->
+                <h:message for="school"/>
+
+                <h:outputText value="Mokyklos baigimo metai:"/>
+                <h:inputText class="w-input" data-name="YearOfSchoolGraduation" id="yearOfSchoolGraduation" maxlength="256" name="yearOfSchoolGraduation"
+                             pt:placeholder="Įveskite metus" type="yearOfSchoolGraduation"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.yearOfSchoolGraduation}"-->
+                <h:message for="yearOfSchoolGraduation"/>
+
+                <h:outputText value="Šeimyninė padėtis:"/>
+                <h:selectOneMenu class="w-input" data-name="MaritalStatus" id="maritalStatus" maxlength="256"
+                                 required="false"> <!-- reikes prideti: value="#{newStudentBean.education}"-->
+                    <f:selectItem itemValue="Nepasirikta" itemLabel="-Pasirinkite-" />
+                    <f:selectItem itemValue="Nevedęs/Netekėjusi" itemLabel="Nevedęs/Netekėjusi" />
+                    <f:selectItem itemValue="Vedęs/Ištekėjusi" itemLabel="Vedęs/Ištekėjusi" />
+                    <f:selectItem itemValue="Išsituokęs" itemLabel="Išsituokęs" />
+                    <f:selectItem itemValue="Našlys" itemLabel="Našlys" />
+                </h:selectOneMenu>
+                <h:message for="maritalStatus"/>
+
+                <h:commandButton class="btn intro next w-inline-block" action="addQualificatons"
+                                 value="Mokosi antrą kartą"/>
+
+                <h:commandButton class="btn intro next w-inline-block" action="addNewApplication"
+                                 value="Informacija apie prašymą"/>
+
+                <h:commandButton class="btn intro next w-inline-block" action="addAdditionalInformation"
+                                 value="Pridėti papildomą informaciją"/>
 
                 <!--<div class="w-form-done">-->
                 <!--<div>Ačiū! Forma užpildyta!</div>-->
@@ -70,4 +193,4 @@
     </div>
 </div>
 </h:body>
-        </html>
+</html>
