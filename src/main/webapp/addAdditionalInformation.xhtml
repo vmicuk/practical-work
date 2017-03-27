@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <title>Papildoma informacija</title>
+    <h:outputStylesheet name="styles.css"/>
+</h:head>
+
+<h:body class="body">
+    <div class="container">
+
+        <div class="header">
+            <img class="logo" src="images/id-card.svg" width="55" alt=""/>
+            <div class="text-block"><a href="firstMain.xhtml">EMPRIS</a></div>
+        </div>
+
+        <h:form class="content">
+
+            <h3 class="text-block-3">Papildoma informacija</h3>
+
+            <h:panelGrid columns="3" class="w-form">
+
+                <h:outputText value="Ar reikalingas bendrabutis?"/>
+                <h:selectOneMenu class="w-input" data-name="DormitoryInfo" id="dormitoryInfo" maxlength="256"
+                                      required="false"> <!-- reikes prideti: value="#{}"-->
+                    <f:selectItem itemValue="Taip" itemLabel="TAIP" />
+                    <f:selectItem itemValue="Ne" itemLabel="NE" />
+                </h:selectOneMenu>
+                <h:message for="dormitoryInfo"/>
+
+                <h:outputText value="Iš kur sužinojote apie mūsų įstaigą?"/>
+                <h:selectManyCheckbox data-name="MoreInfo" id="moreInfo" maxlength="256"
+                                      required="false"> <!-- reikes prideti: value="#{}"-->
+                    <f:selectItem itemValue="Iš draugų" itemLabel="Iš draugų" />
+                    <f:selectItem itemValue="Iš interneto" itemLabel="Iš interneto" />
+                    <f:selectItem itemValue="Iš leidinio Kur stoti" itemLabel="Iš leidinio Kur stoti" />
+                    <f:selectItem itemValue="Mokykloje" itemLabel="Mokykloje" />
+                    <f:selectItem itemValue="Mačiau reklamą" itemLabel="Mačiau reklamą" />
+                    <f:selectItem itemValue="Proforientacijos metu" itemLabel="Proforientacijos metu" />
+                    <f:selectItem itemValue="Kita" itemLabel="Kita" />
+                </h:selectManyCheckbox>
+                <h:message for="moreInfo"/>
+
+            </h:panelGrid>
+
+            <div class="div-block w-clearfix">
+                <h:commandButton class="btn grizti w-inline-block" action="addNewStudent.xhtml" value="Grįžti" required="false"/>
+                <h:commandButton class="btn next w-inline-block" value="Patvirtinti"/> <!-- reikes prideti: action="#{}"-->
+            </div>
+        </h:form>
+
+        <div class="footer">
+            <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
+        </div>
+    </div>
+</h:body>
+</html>

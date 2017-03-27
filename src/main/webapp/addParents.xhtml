@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <title>Duomenys apie tėvus</title>
+    <h:outputStylesheet name="styles.css"/>
+</h:head>
+
+<h:body class="body">
+    <div class="container">
+
+        <div class="header">
+            <img class="logo" src="images/id-card.svg" width="55" alt=""/>
+            <div class="text-block"><a href="firstMain.xhtml">EMPRIS</a></div>
+        </div>
+
+        <h:form class="content">
+
+            <h3 class="text-block-3">Duomenys apie tėvus</h3>
+
+            <h:panelGrid columns="3" class="w-form">
+                <h:outputText value="Tėvo vardas:"/>
+                <h:inputText class="w-input" data-name="FathersName" id="fathersName" maxlength="256" name="fathersName"
+                             pt:placeholder="Įveskite tėvo vardą" type="fathersName"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="fathersName"/>
+
+                <h:outputText value="Tėvo pavardė:"/>
+                <h:inputText class="w-input" data-name="FathersLastname" id="fathersLastname" maxlength="256" name="fathersLastname"
+                             pt:placeholder="Įveskite tėvo pavardę" type="fathersLastname"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="fathersLastname"/>
+
+                <h:outputText value="Tėvo adresas:"/>
+                <h:inputText class="w-input" data-name="FathersAdress" id="fathersadress" maxlength="256"
+                             pt:placeholder="Įveskite tėvo gyvenamosios vietos adresą." type="fathersadress"
+                             required="false"/> <!-- reikes prideti: value="#{}"-->
+                <h:message for="fathersadress"/>
+
+                <h:outputText value="Tėvo telefono nr.:"/>
+                <h:inputText class="w-input" data-name="FathersTelNr" id="fathersTelephoneNumber" maxlength="256" name="fathersTelephoneNumber"
+                             pt:placeholder="+37060000000" type="fathersTelephoneNumber"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="fathersTelephoneNumber"/>
+
+                <h:outputText value="Motinos vardas:"/>
+                <h:inputText class="w-input" data-name="MothersName" id="mothersName" maxlength="256" name="mothersName"
+                             pt:placeholder="Įveskite motinos vardą" type="mothersName"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="mothersName"/>
+
+                <h:outputText value="Motinos pavardė:"/>
+                <h:inputText class="w-input" data-name="MothersLastname" id="mothersLastname" maxlength="256" name="mothersLastname"
+                             pt:placeholder="Įveskite motinos pavardę" type="mothersLastname"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="mothersLastname"/>
+
+                <h:outputText value="Motinos adresas:"/>
+                <h:inputText class="w-input" data-name="MothersAdress" id="mothersAdress" maxlength="256"
+                             pt:placeholder="Įveskite motinos gyvenamosios vietos adresą." type="mothersAdress"
+                             required="false"/> <!-- reikes prideti: value="#{}"-->
+                <h:message for="mothersAdress"/>
+
+                <h:outputText value="Motinos telefono nr.:"/>
+                <h:inputText class="w-input" data-name="MothersTelNr" id="mothersTelNr" maxlength="256" name="mothersTelNr"
+                             pt:placeholder="+37060000000" type="mothersTelNr"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="mothersTelNr"/>
+
+                <h:outputText value="Globėjo(-jos) vardas:"/>
+                <h:inputText class="w-input" data-name="TutorsName" id="tutorsName" maxlength="256" name="tutorsName"
+                             pt:placeholder="Įveskite globėjo(-jos) vardą" type="tutorsName"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="tutorsName"/>
+
+                <h:outputText value="Globėjo(-jos) pavardė:"/>
+                <h:inputText class="w-input" data-name="TutorsLastname" id="tutorsLastname" maxlength="256" name="tutorsLastname"
+                             pt:placeholder="Įveskite motinos pavardę" type="tutorsLastname"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="tutorsLastname"/>
+
+                <h:outputText value="Globėjo(-jos) adresas:"/>
+                <h:inputText class="w-input" data-name="TutorsAdress" id="tutorsAdress" maxlength="256"
+                             pt:placeholder="Įveskite globėjo(-jos) gyvenamosios vietos adresą." type="tutorsAdress"
+                             required="false"/> <!-- reikes prideti: value="#{}"-->
+                <h:message for="tutorsAdress"/>
+
+                <h:outputText value="Globėjo(-jos)telefono nr.:"/>
+                <h:inputText class="w-input" data-name="TutorsTelNr" id="tutorsTelNr" maxlength="256" name="tutorsTelNr"
+                             pt:placeholder="+37060000000" type="tutorsTelNr"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="tutorsTelNr"/>
+
+            </h:panelGrid>
+
+            <div class="div-block w-clearfix">
+                <h:commandButton class="btn grizti w-inline-block" action="addNewStudent.xhtml" value="Grįžti" required="false"/>
+                <h:commandButton class="btn next w-inline-block" value="Patvirtinti"/> <!-- reikes prideti: action="#{}"-->
+            </div>
+        </h:form>
+
+        <div class="footer">
+            <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
+        </div>
+    </div>
+</h:body>
+</html>
