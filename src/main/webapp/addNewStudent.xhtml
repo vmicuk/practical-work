@@ -39,6 +39,7 @@
                 <h:outputText value="Gimimo data:"/>
                 <h:inputText class="w-input" data-name="DateOfBirth" id="dateOfBirth" maxlength="256"
                              pt:placeholder="1990-01-01" type="date"
+
                              required="true"/> <!-- reikes prideti: value="#{newStudentBean.studentDateOfBirth}"-->
                 <h:message for="dateOfBirth"/>
 
@@ -118,6 +119,7 @@
                 <h:outputText value="Telefono nr.:"/>
                 <h:inputText class="w-input" data-name="TelNr" id="telephoneNumber" maxlength="256" name="telephoneNumber"
                              pt:placeholder="+37060000000" type="telephoneNumber"
+
                              required="false"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.telephoneNumber}"-->
                 <h:message for="telephoneNumber"/>
 
@@ -160,7 +162,7 @@
                     <f:selectItem itemValue="Našlys" itemLabel="Našlys" />
                 </h:selectOneMenu>
                 <h:message for="maritalStatus"/>
-
+              
                 <!--<div class="w-form-done">-->
                 <!--<div>Ačiū! Forma užpildyta!</div>-->
                 <!--</div>-->
