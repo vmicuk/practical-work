@@ -38,7 +38,8 @@
 
                 <h:outputText value="Gimimo data:"/>
                 <h:inputText class="w-input" data-name="DateOfBirth" id="dateOfBirth" maxlength="256"
-                             pt:placeholder="Įveskite vardą." type="date"
+                             pt:placeholder="1990-01-01" type="date"
+
                              required="true"/> <!-- reikes prideti: value="#{newStudentBean.studentDateOfBirth}"-->
                 <h:message for="dateOfBirth"/>
 
@@ -117,7 +118,8 @@
 
                 <h:outputText value="Telefono nr.:"/>
                 <h:inputText class="w-input" data-name="TelNr" id="telephoneNumber" maxlength="256" name="telephoneNumber"
-                             pt:placeholder="+37061231231" type="telephoneNumber"
+                             pt:placeholder="+37060000000" type="telephoneNumber"
+
                              required="false"></h:inputText> <!-- reikes prideti: value="#{newStudentBean.telephoneNumber}"-->
                 <h:message for="telephoneNumber"/>
 
@@ -160,16 +162,7 @@
                     <f:selectItem itemValue="Našlys" itemLabel="Našlys" />
                 </h:selectOneMenu>
                 <h:message for="maritalStatus"/>
-
-                <h:commandButton class="btn intro next w-inline-block" action="addQualificatons"
-                                 value="Mokosi antrą kartą"/>
-
-                <h:commandButton class="btn intro next w-inline-block" action="addNewApplication"
-                                 value="Informacija apie prašymą"/>
-
-                <h:commandButton class="btn intro next w-inline-block" action="addAdditionalInformation"
-                                 value="Pridėti papildomą informaciją"/>
-
+              
                 <!--<div class="w-form-done">-->
                 <!--<div>Ačiū! Forma užpildyta!</div>-->
                 <!--</div>-->
@@ -178,6 +171,18 @@
                 <!--<div>Oops! Kažkas nutiko pildant formą!</div>-->
                 <!--</div>-->
             </h:panelGrid>
+
+            <h:commandButton class="btn intro next w-inline-block" action="addQualifications.xhtml"
+                             value="Mokosi antrą kartą"/>
+
+            <h:commandButton class="btn intro next w-inline-block" action="addNewApplication.xhtml"
+                             value="Informacija apie prašymą"/>
+
+            <h:commandButton class="btn intro next w-inline-block" action="addParents.xhtml"
+                             value="Duomenys apie tėvus"/>
+
+            <h:commandButton class="btn intro next w-inline-block" action="addAdditionalInformation.xhtml"
+                             value="Pridėti papildomą informaciją"/>
 
             <div class="div-block w-clearfix">
             <h:commandButton class="btn grizti w-inline-block" action="firstMain.xhtml" value="Grįžti" required="false"/>

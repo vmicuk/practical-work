@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <title>Informacija apie kvalifikacijas</title>
+    <h:outputStylesheet name="styles.css"/>
+</h:head>
+
+<h:body class="body">
+    <div class="container">
+
+        <div class="header">
+            <img class="logo" src="images/id-card.svg" width="55" alt=""/>
+            <div class="text-block"><a href="firstMain.xhtml">EMPRIS</a></div>
+        </div>
+
+        <h:form class="content">
+
+            <h3 class="text-block-3">Informacija apie įgytas kvalifikacijas</h3>
+
+            <h:panelGrid columns="3" class="w-form">
+                <h:outputText value="Specialybės pavadinimas:"/>
+                <h:inputText class="w-input" data-name="SpecialtyTitle" id="specialtyTitle" maxlength="256" name="specialtyTitle"
+                             pt:placeholder="Įveskite specialybės pavadinimą" type="specialtyTitle"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="specialtyTitle"/>
+
+                <h:outputText value="Instituciojs pavadinimas:"/>
+                <h:inputText class="w-input" data-name="TitleOfInstitution" id="titleOfInstitution" maxlength="256" name="titleOfInstitution"
+                             pt:placeholder="Įveskite institucijos pavadinimą" type="titleOfInstitution"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="titleOfInstitution"/>
+
+                <h:outputText value="Instituciojs tipas:"/>
+                <h:inputText class="w-input" data-name="TypeOfInstitution" id="typeOfInstitution" maxlength="256" name="typeOfInstitution"
+                             pt:placeholder="Įveskite institucijos tipą" type="typeOfInstitution"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="typeOfInstitution"/>
+
+                <h:outputText value="Baigimo metai:"/>
+                <h:inputText class="w-input" data-name="YearOfGraduation" id="yearOfGraduation" maxlength="256" name="yearOfGraduation"
+                             pt:placeholder="Įveskite metus" type="yearOfGraduation"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="yearOfGraduation"/>
+
+            </h:panelGrid>
+
+            <div class="div-block w-clearfix">
+                <h:commandButton class="btn grizti w-inline-block" action="addNewStudent.xhtml" value="Grįžti" required="false"/>
+                <h:commandButton class="btn next w-inline-block" value="Patvirtinti"/> <!-- reikes prideti: action="#{}"-->
+            </div>
+        </h:form>
+
+        <div class="footer">
+            <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
+        </div>
+    </div>
+</h:body>
+</html>

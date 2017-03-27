@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <title>Informacija apie prašymą</title>
+    <h:outputStylesheet name="styles.css"/>
+</h:head>
+
+<h:body class="body">
+    <div class="container">
+
+        <div class="header">
+            <img class="logo" src="images/id-card.svg" width="55" alt=""/>
+            <div class="text-block"><a href="firstMain.xhtml">EMPRIS</a></div>
+        </div>
+
+        <h:form class="content">
+
+            <h3 class="text-block-3">Informacija apie prašymą</h3>
+
+            <h:panelGrid columns="3" class="w-form">
+
+                <h:outputText value="Prašymo data:"/>
+                <h:inputText class="w-input" data-name="DateOfApplication" id="dateOfApplication" maxlength="256" name="dateOfApplication"
+                             pt:placeholder="2017-01-01" type="dateOfApplication"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="dateOfApplication"/>
+
+                <h:outputText value="Grupė:"/>
+                <h:inputText class="w-input" data-name="Group" id="group" maxlength="256" name="group"
+                             pt:placeholder="Įveskite moksleivio grupę" type="group"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="group"/>
+
+                <h:outputText value="Pakopa:"/>
+                <h:inputText class="w-input" data-name="Level" id="level" maxlength="256" name="level"
+                             pt:placeholder="Įveskite pakopą" type="level"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="level"/>
+
+                <h:outputText value="Instituciojs tipas:"/>
+                <h:inputText class="w-input" data-name="TypeOfInstitution" id="typeOfInstitution" maxlength="256" name="typeOfInstitution"
+                             pt:placeholder="Įveskite institucijos tipą" type="typeOfInstitution"
+                             required="false"></h:inputText> <!-- reikes prideti: value="#{}"-->
+                <h:message for="typeOfInstitution"/>
+
+                <h:outputText value="Pridedama prie prašymo:"/>
+                <h:selectManyCheckbox data-name="Attachments" id="attachments" maxlength="256"
+                                      required="false"> <!-- reikes prideti: value="#{}"-->
+                    <f:selectItem itemValue="Išsilavinimo dokumentas" itemLabel="Išsilavinimo dokumentas" />
+                    <f:selectItem itemValue="Sveikatos pažymėjimas" itemLabel="Sveikatos pažymėjimas" />
+                    <f:selectItem itemValue="Nuotraukos" itemLabel="Nuotraukos 3X4 (2-4 vnt.)" />
+                    <f:selectItem itemValue="Paso kopija (ID kopija)" itemLabel="Paso kopija (tapatybės kortelės kopija)" />
+                    <f:selectItem itemValue="Šauktinio liudijimas" itemLabel="Šauktinio liudijimas" />
+                    <f:selectItem itemValue="Stojamasis mokestis" itemLabel="Stojamasis mokestis" />
+                </h:selectManyCheckbox>
+                <h:message for="attachments"/>
+
+            </h:panelGrid>
+
+            <div class="div-block w-clearfix">
+                <h:commandButton class="btn grizti w-inline-block" action="addNewStudent.xhtml" value="Grįžti" required="false"/>
+                <h:commandButton class="btn next w-inline-block" value="Patvirtinti"/> <!-- reikes prideti: action="#{}"-->
+            </div>
+        </h:form>
+
+        <div class="footer">
+            <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
+        </div>
+    </div>
+</h:body>
+</html>
