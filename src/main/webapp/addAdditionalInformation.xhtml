@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<ui:composition template="basic-template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
-<h:head>
-    <meta charset="utf-8"/>
-    <title>Papildoma informacija</title>
-    <h:outputStylesheet name="styles.css"/>
-</h:head>
+    <ui:define name="title">
+        Additional Info
+    </ui:define>
 
-<h:body class="body">
-    <div class="container">
-
-        <div class="header">
-            <img class="logo" src="images/id-card.svg" width="55" alt=""/>
-            <div class="text-block"><a href="firstMain.xhtml">EMPRIS</a></div>
-        </div>
+    <ui:define name="content">
 
         <h:form class="content">
 
@@ -53,9 +46,6 @@
             </div>
         </h:form>
 
-        <div class="footer">
-            <p class="text-block-2">® 2017 Visos teisės saugomos. Sukurta Grupė99</p>
-        </div>
-    </div>
-</h:body>
-</html>
+    </ui:define>
+
+</ui:composition>
