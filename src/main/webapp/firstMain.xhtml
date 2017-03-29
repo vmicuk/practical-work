@@ -10,17 +10,18 @@
 </ui:define>
 
         <ui:define name="content">
-
+            <h:form>
             <h3 class="text-block-3">Elektroninė <span class="marked">moksleivių</span> priėmimo
                 <br/>registracijos informacinė sistema</h3>
-            <h:commandButton class="btn intro next w-inline-block" action="addNewStudent.xhtml"
+            <h:commandButton styleClass="btn intro next w-inline-block" action="addNewStudent"
                              value="Naujo moksleivio registracija"/>
-            <h:commandButton class="btn intro next w-inline-block"
+            <h:commandButton styleClass="btn intro next w-inline-block"
                              value="Mokymo plano pasirinkimas"/> <!-- mygtukas turi tureti: action="#{newStudentBean.save()}" -->
-            <h:commandButton class="btn intro next w-inline-block"
+            <h:commandButton styleClass="btn intro next w-inline-block"
                              value="Informacija apie moksleivį"/> <!-- mygtukas turi tureti: action="#{newStudentBean.save()}" -->
-            <h:commandButton class="btn intro next w-inline-block"
+            <h:commandButton styleClass="btn intro next w-inline-block"
                              value="Peržiūrėti mokymo planą"/> <!-- mygtukas turi tureti: action="#{newStudentBean.save()}" -->
+            </h:form>
         </ui:define>
 
 </ui:composition>
