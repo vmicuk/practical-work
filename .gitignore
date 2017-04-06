@@ -1,7 +1,6 @@
-
+.gitignore
+.idea/
 target/
 tmp/
+pw.iml
 *.class
-
-.idea/
-.gitignore
