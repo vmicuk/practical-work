@@ -24,6 +24,7 @@ public class Student implements Serializable {
 
     private String email;
 
+
     private long studentPhone;
 
     private String maritalStatus;
@@ -37,6 +38,7 @@ public class Student implements Serializable {
 
     public Student(String firstName, String lastName, Date dateOfBirth, String email, long studentPhone,
                    String maritalStatus, String school, Date dateOfSchoolGraduation) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
