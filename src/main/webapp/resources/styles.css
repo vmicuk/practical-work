@@ -257,3 +257,20 @@ textarea.w-input,
 textarea.w-select {
     height: auto;
 }
+
+#tableActionForm table {
+    width: 100%;
+}
+
+#tableActionForm table tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+#tableActionForm table tr td,th {
+    margin: 0px;
+    border: 0px;
+}
+
+#tableActionForm table tr th {
+    border-bottom: 2px solid black;
+}
