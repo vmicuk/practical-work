@@ -45,7 +45,8 @@ public class NewStudentBean {
 
     @Transactional
     public String save() {
-        Student student = new Student(studentFirstName, studentLastName, dateOfBirth, studentEmail);
+        Student student = new Student(studentFirstName, studentLastName, dateOfBirth, studentEmail, studentPhone,
+        maritalStatus, school, dateOfSchoolGraduation);
         entityManager.persist(student);
         return "main";
     }
