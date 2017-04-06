@@ -42,6 +42,7 @@ public class NewStudentBean {
 
     private Date dateOfSchoolGraduation;
 
+
     @Transactional
     public String save() {
         Student student = new Student(studentFirstName, studentLastName, dateOfBirth, studentEmail, studentPhone,
