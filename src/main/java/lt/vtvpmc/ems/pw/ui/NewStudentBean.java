@@ -10,6 +10,8 @@ import lt.vtvpmc.ems.pw.entities.Student;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+
 
 public class NewStudentBean {
 
@@ -30,7 +32,7 @@ public class NewStudentBean {
     @Size(min = 10, max = 30, message = "El. pašto adresas turi būti 10 - 30 simbolių ilgio!")
     private String studentEmail;
 
-    private long dateOfBirth;
+    private Date dateOfBirth;
 
     @Transactional
     public String save() {
@@ -55,11 +57,11 @@ public class NewStudentBean {
         this.studentLastName = studentLastName;
     }
 
-    public long getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(long dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

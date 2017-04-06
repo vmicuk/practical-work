@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
+import java.io.Serializable;import java.util.Date;
 
 @Entity
 public class Student implements Serializable {
@@ -19,11 +19,12 @@ public class Student implements Serializable {
 
     private String lastName;
 
-    private long dateOfBirth;
+//    @Temporal(TemporalType.DATE)
+    private Date dateOfBirth;
 
     private String email;
 
-    public Student(String firstName, String lastName, long dateOfBirth, String email ) {
+    public Student(String firstName, String lastName, Date dateOfBirth, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -57,11 +58,11 @@ public class Student implements Serializable {
         this.lastName = lastName;
     }
 
-    public long getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(long dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
