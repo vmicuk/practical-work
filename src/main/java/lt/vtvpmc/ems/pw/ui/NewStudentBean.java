@@ -34,6 +34,15 @@ public class NewStudentBean {
 
     private Date dateOfBirth;
 
+    private long studentPhone;
+
+    private String maritalStatus;
+
+    private String school;
+
+    private Date dateOfSchoolGraduation;
+
+
     @Transactional
     public String save() {
         Student student = new Student(studentFirstName, studentLastName, dateOfBirth, studentEmail);
@@ -71,5 +80,37 @@ public class NewStudentBean {
 
     public void setStudentEmail(String studentEmail) {
         this.studentEmail = studentEmail;
+    }
+
+    public long getStudentPhone() {
+        return studentPhone;
+    }
+
+    public void setStudentPhone(long studentPhone) {
+        this.studentPhone = studentPhone;
+    }
+
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public Date getDateOfSchoolGraduation() {
+        return dateOfSchoolGraduation;
+    }
+
+    public void setDateOfSchoolGraduation(Date dateOfSchoolGraduation) {
+        this.dateOfSchoolGraduation = dateOfSchoolGraduation;
     }
 }
