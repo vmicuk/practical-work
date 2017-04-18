@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import lt.vtvpmc.ems.pw.entities.Student;
+import lt.vtvpmc.ems.pw.entities.*;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,11 +42,19 @@ public class NewStudentBean {
 
     private Date dateOfSchoolGraduation;
 
+    private Priedas priedas;
+
+    private Papildoma_informacija papildoma_informacija;
+
+    private Mokosi_antra_karta mokosi_antra_karta;
+
+    private Prasymas prasymas;
+
 
     @Transactional
     public String save() {
-        Student student = new Student(studentFirstName, studentLastName, dateOfBirth, studentEmail, studentPhone,
-        maritalStatus, school, dateOfSchoolGraduation);
+        Student student = new Student(studentFirstName, studentLastName, dateOfBirth, studentEmail, studentPhone, maritalStatus,
+                school, dateOfSchoolGraduation, priedas, papildoma_informacija, mokosi_antra_karta, prasymas);
         entityManager.persist(student);
         return "main";
     }
@@ -113,5 +121,37 @@ public class NewStudentBean {
 
     public void setDateOfSchoolGraduation(Date dateOfSchoolGraduation) {
         this.dateOfSchoolGraduation = dateOfSchoolGraduation;
+    }
+
+    public Priedas getPriedas() {
+        return priedas;
+    }
+
+    public void setPriedas(Priedas priedas) {
+        this.priedas = priedas;
+    }
+
+    public Papildoma_informacija getPapildoma_informacija() {
+        return papildoma_informacija;
+    }
+
+    public void setPapildoma_informacija(Papildoma_informacija papildoma_informacija) {
+        this.papildoma_informacija = papildoma_informacija;
+    }
+
+    public Mokosi_antra_karta getMokosi_antra_karta() {
+        return mokosi_antra_karta;
+    }
+
+    public void setMokosi_antra_karta(Mokosi_antra_karta mokosi_antra_karta) {
+        this.mokosi_antra_karta = mokosi_antra_karta;
+    }
+
+    public Prasymas getPrasymas() {
+        return prasymas;
+    }
+
+    public void setPrasymas(Prasymas prasymas) {
+        this.prasymas = prasymas;
     }
 }
