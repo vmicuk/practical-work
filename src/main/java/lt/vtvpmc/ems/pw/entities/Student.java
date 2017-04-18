@@ -18,10 +18,15 @@ public class Student implements Serializable {
     @NotNull
     private String lastName;
 
-//    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.DATE)
     @NotNull
     private Date dateOfBirth;
     private String email;
+    private long phoneNumber;
+    private String maritalStatus;
+    private String school;
+    private Date dateOfSchoolGraduation;
+
     @OneToOne
     private Priedas priedas;
     @OneToOne
@@ -31,11 +36,17 @@ public class Student implements Serializable {
     @OneToOne
     private Prasymas prasymas;
 
-    public Student(String firstName, String lastName, Date dateOfBirth, String email, Priedas priedas, Papildoma_informacija papildoma_informacija, Mokosi_antra_karta mokosi_antra_karta, Prasymas prasymas) {
+    public Student(String firstName, String lastName, Date dateOfBirth, String email, long phoneNumber, String maritalStatus,
+                   String school, Date dateOfSchoolGraduation, Priedas priedas, Papildoma_informacija papildoma_informacija,
+                   Mokosi_antra_karta mokosi_antra_karta, Prasymas prasymas) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.maritalStatus = maritalStatus;
+        this.school = school;
+        this.dateOfSchoolGraduation = dateOfSchoolGraduation;
         this.priedas = priedas;
         this.papildoma_informacija = papildoma_informacija;
         this.mokosi_antra_karta = mokosi_antra_karta;
@@ -83,6 +94,38 @@ public class Student implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public Date getDateOfSchoolGraduation() {
+        return dateOfSchoolGraduation;
+    }
+
+    public void setDateOfSchoolGraduation(Date dateOfSchoolGraduation) {
+        this.dateOfSchoolGraduation = dateOfSchoolGraduation;
     }
 
     public Priedas getPriedas() {
