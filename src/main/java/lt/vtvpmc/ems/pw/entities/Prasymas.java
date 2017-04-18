@@ -1,9 +1,6 @@
 package lt.vtvpmc.ems.pw.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -14,9 +11,11 @@ public class Prasymas {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id_prasymas;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date date;
     private String grupe;
     private String pakopa;
+
 
     public Prasymas() {
     }

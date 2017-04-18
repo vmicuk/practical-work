@@ -30,6 +30,7 @@
                 <h:outputText value="Gimimo data:"/>
                 <h:inputText class="w-input" data-name="DateOfBirth" id="dateOfBirth" maxlength="256"
                              pt:placeholder="1990-01-01" type="date" value="#{newStudentBean.dateOfBirth}"
+
                              required="true"/>
                 <h:message for="dateOfBirth"/>
 
@@ -175,7 +176,7 @@
                              value="Pridėti papildomą informaciją"/>
 
             <div class="div-block w-clearfix">
-            <h:commandButton class="btn grizti w-inline-block" action="main.xhtml" value="Grįžti" required="false"/>
+            <h:commandButton class="btn grizti w-inline-block" action="main.xhtml" value="Grįžti" />
             <h:commandButton class="btn next w-inline-block" action="#{newStudentBean.save()}"
                              value="Patvirtinti"/>
             </div>

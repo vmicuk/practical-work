@@ -10,10 +10,17 @@ import java.util.List;
  */
 public interface StudentRepository {
     public void create(Student student);
+
     public void save(Student student);
+
     public void update(Student student);
+
     public void delete(Student student);
+
     public List<Student> findAll();
-    public List<Student> findByNotNull (String firstName, String lastName, Date dateOfBirth);
+
+    public List<Student> findByNotNull(String firstName, String lastName, Date dateOfBirth);
 
 }
+
+

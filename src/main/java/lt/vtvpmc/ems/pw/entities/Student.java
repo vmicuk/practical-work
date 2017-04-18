@@ -2,7 +2,8 @@ package lt.vtvpmc.ems.pw.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;import java.util.Date;
+import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 public class Student implements Serializable {
@@ -17,27 +18,25 @@ public class Student implements Serializable {
     private String firstName;
     @NotNull
     private String lastName;
-
-    @Temporal(TemporalType.DATE)
     @NotNull
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String email;
     private long phoneNumber;
     private String maritalStatus;
     private String school;
-    private Date dateOfSchoolGraduation;
+    private String dateOfSchoolGraduation;
 
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     private Priedas priedas;
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     private Papildoma_informacija papildoma_informacija;
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     private Mokosi_antra_karta mokosi_antra_karta;
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     private Prasymas prasymas;
 
-    public Student(String firstName, String lastName, Date dateOfBirth, String email, long phoneNumber, String maritalStatus,
-                   String school, Date dateOfSchoolGraduation, Priedas priedas, Papildoma_informacija papildoma_informacija,
+    public Student(String firstName, String lastName, String dateOfBirth, String email, long phoneNumber, String maritalStatus,
+                   String school, String dateOfSchoolGraduation, Priedas priedas, Papildoma_informacija papildoma_informacija,
                    Mokosi_antra_karta mokosi_antra_karta, Prasymas prasymas) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -80,11 +79,11 @@ public class Student implements Serializable {
         this.lastName = lastName;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -120,11 +119,11 @@ public class Student implements Serializable {
         this.school = school;
     }
 
-    public Date getDateOfSchoolGraduation() {
+    public String getDateOfSchoolGraduation() {
         return dateOfSchoolGraduation;
     }
 
-    public void setDateOfSchoolGraduation(Date dateOfSchoolGraduation) {
+    public void setDateOfSchoolGraduation(String dateOfSchoolGraduation) {
         this.dateOfSchoolGraduation = dateOfSchoolGraduation;
     }
 
@@ -151,4 +150,5 @@ public class Student implements Serializable {
     public void setMokosi_antra_karta(Mokosi_antra_karta mokosi_antra_karta) {
         this.mokosi_antra_karta = mokosi_antra_karta;
     }
+
 }

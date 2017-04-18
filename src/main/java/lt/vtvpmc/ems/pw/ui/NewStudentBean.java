@@ -32,7 +32,7 @@ public class NewStudentBean {
     @Size(min = 10, max = 30, message = "El. pašto adresas turi būti 10 - 30 simbolių ilgio!")
     private String studentEmail;
 
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     private long studentPhone;
 
@@ -40,7 +40,7 @@ public class NewStudentBean {
 
     private String school;
 
-    private Date dateOfSchoolGraduation;
+    private String dateOfSchoolGraduation;
 
     private Priedas priedas;
 
@@ -56,7 +56,8 @@ public class NewStudentBean {
         Student student = new Student(studentFirstName, studentLastName, dateOfBirth, studentEmail, studentPhone, maritalStatus,
                 school, dateOfSchoolGraduation, priedas, papildoma_informacija, mokosi_antra_karta, prasymas);
         entityManager.persist(student);
-        return "main";
+
+        return "searchForStudent";
     }
 
     public String getStudentFirstName() {
@@ -75,11 +76,11 @@ public class NewStudentBean {
         this.studentLastName = studentLastName;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -115,11 +116,11 @@ public class NewStudentBean {
         this.school = school;
     }
 
-    public Date getDateOfSchoolGraduation() {
+    public String getDateOfSchoolGraduation() {
         return dateOfSchoolGraduation;
     }
 
-    public void setDateOfSchoolGraduation(Date dateOfSchoolGraduation) {
+    public void setDateOfSchoolGraduation(String dateOfSchoolGraduation) {
         this.dateOfSchoolGraduation = dateOfSchoolGraduation;
     }
 
